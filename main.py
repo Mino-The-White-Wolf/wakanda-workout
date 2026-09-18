@@ -85,16 +85,15 @@ def main(page: ft.Page):
         update_ui()
 
     # Boutons de contrôle
-    btn_play = ft.ElevatedButton("Lancer", on_click=run_timer, bgcolor="#5e2a84", color="white")
-    btn_pause = ft.ElevatedButton("Pause", on_click=pause_timer, disabled=True, bgcolor="#333333", color="white")
-    btn_next = ft.ElevatedButton("Suivant", on_click=next_step, bgcolor="#00e5ff", color="black")
+    btn_play = ft.Button(content="Lancer", on_click=run_timer, bgcolor="#5e2a84", color="white")
+    btn_pause = ft.Button(content="Pause", on_click=pause_timer, disabled=True, bgcolor="#333333", color="white")
+    btn_next = ft.Button(content="Suivant", on_click=next_step, bgcolor="#00e5ff", color="black")
     
     controle_row = ft.Row([btn_play, btn_pause, btn_next], alignment=ft.MainAxisAlignment.CENTER)
 
     # Boutons de sélection
-    btn_sa = ft.OutlinedButton("Séance A", on_click=lambda e: choose_seance("A"))
-    btn_sb = ft.OutlinedButton("Séance B", on_click=lambda e: choose_seance("B"))
-    selection_row = ft.Row([btn_sa, btn_sb], alignment=ft.MainAxisAlignment.CENTER)
+    btn_sa = ft.Button(content="Séance A", on_click=lambda e: choose_seance("A"))
+    btn_sb = ft.Button(content="Séance B", on_click=lambda e: choose_seance("B"))
 
     page.add(
         ft.Column([
