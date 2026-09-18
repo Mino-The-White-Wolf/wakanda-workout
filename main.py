@@ -106,5 +106,4 @@ def main(page: ft.Page):
             controle_row
         ], horizontal_alignment=ft.CrossAxisAlignment.CENTER)
     )
-
-ft.app(target=main)
+ft.run(main)
