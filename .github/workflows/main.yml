@@ -12,21 +12,16 @@ jobs:
       - name: 📥 Récupérer le code
         uses: actions/checkout@v4
 
-      - name: 🐍 Installer une version stable de Python
+      - name: 🐍 Installer Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 🦅 Installer Flutter (Requis pour l'APK)
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-
       - name: 🛠️ Installer Flet
         run: pip install flet
 
-      - name: ⚙️ Compiler l'Application Android
-        run: flet build apk
+      - name: ⚙️ Compiler l'Application Android (Validation Auto)
+        run: yes | flet build apk
 
       - name: 📦 Sauvegarder et Télécharger l'APK
         uses: actions/upload-artifact@v4
